@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
+        backgroundColor: Colors.blue[200],
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
