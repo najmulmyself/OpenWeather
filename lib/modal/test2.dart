@@ -8,7 +8,7 @@ class Remote {
     // Test Api
 
     var response = await http.get(
-      Uri.parse('https://jsonplaceholder.typicode.com/users'),
+      Uri.parse('https://jsonplaceholder.typicode.com/posts'),
     );
     return usersFromJson(response.body);
     // return json;
