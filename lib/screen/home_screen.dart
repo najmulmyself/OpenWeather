@@ -20,14 +20,18 @@ class _HomeScreenState extends State<HomeScreen> {
     http.Response response = await http.get(
       Uri.parse('https://jsonplaceholder.typicode.com/users'),
     );
-    var test = usersFromJson(response.body);
-    print(test);
+    return usersFromJson(response.body);
+    // print(test);
   }
 
+  // var test = getData;
+  var test;
   @override
   void initState() {
     super.initState();
     getData();
+    // print(getData());
+    test = getData();
   }
 
   @override
@@ -51,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          Text(test[0]['name'])
         ],
       ),
     );
