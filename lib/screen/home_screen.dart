@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 // import 'package:openweather/modal/test.dart';
 import 'package:openweather/modal/test2.dart';
 
-const apiKey = 'c1478dff46b3220baeb2e7127cb080f4';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
