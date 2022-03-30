@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // }
 
   // var test = getData;
-  dynamic usr;
+  List? post;
   @override
   void initState() {
     super.initState();
@@ -42,40 +42,40 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // return Center(
-    //   child: Column(
-    //     children: [
-    //       // Text('Today march 27 , 2022'),
-    //       // Text('Barcelona'),
-    //       // Text('Spain'),
-    //       // SizedBox(
-    //       //   height: 30,
-    //       // ),
-    //       // CircleAvatar(
-    //       //   maxRadius: 120,
-    //       //   child: Column(
-    //       //     mainAxisAlignment: MainAxisAlignment.center,
-    //       //     children: [
-    //       //       Icon(Icons.format_color_reset_sharp),
-    //       //       Text('10C'),
-    //       //     ],
-    //       //   ),
-    //       // ),
-    //       // ListView.builder(
-    //       //   itemBuilder: (c, i) => Container(
-    //       //     child: Text(usr![i].title),
-    //       //   ),
-    //       //   itemCount: usr.length,
-    //       // )
-    //     ],
+    return Center(
+      child: Column(
+        children: [
+          Text('Today march 27 , 2022'),
+          Text('Barcelona'),
+          Text('Spain'),
+          SizedBox(
+            height: 30,
+          ),
+          CircleAvatar(
+            maxRadius: 120,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.format_color_reset_sharp),
+                Text('10C'),
+              ],
+            ),
+          ),
+          ListView.builder(
+            itemBuilder: (c, i) => Container(
+              child: Text(usr![i].title),
+            ),
+            itemCount: usr.length,
+          )
+        ],
+      ),
+    );
+
+    // return ListView.builder(
+    //   itemCount: usr.length,
+    //   itemBuilder: (c, i) => Container(
+    //     child: Text(usr[i].title),
     //   ),
     // );
-
-    return ListView.builder(
-      itemBuilder: (c, i) => Container(
-        child: Text(usr[i].title),
-      ),
-      itemCount: usr.length,
-    );
   }
 }
