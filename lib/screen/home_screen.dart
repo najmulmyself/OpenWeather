@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:openweather/modal/test.dart';
+// import 'package:openweather/modal/test.dart';
 import 'package:openweather/modal/test2.dart';
 
 const apiKey = 'c1478dff46b3220baeb2e7127cb080f4';
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // }
 
   // var test = getData;
-  List? post;
+  dynamic post;
   @override
   void initState() {
     super.initState();
@@ -37,45 +37,54 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   getUser() async {
-    usr = await Remote().getData();
+    post = await Remote().getData();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    // return Center(
+    //   child: Column(
+    //     children: [
+    // Text('Today march 27 , 2022'),
+    // Text('Barcelona'),
+    // Text('Spain'),
+    // SizedBox(
+    //   height: 30,
+    // ),
+    // CircleAvatar(
+    //   maxRadius: 120,
+    //   child: Column(
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: [
+    //       Icon(Icons.format_color_reset_sharp),
+    //       Text('10C'),
+    //     ],
+    //   ),
+    // ),
+    //       ListView.builder(
+    //         itemBuilder: (c, i) => Container(
+    //           child: Text(post[i].title),
+    //         ),
+    //         itemCount: post.length,
+    //       )
+    //     ],
+    //   ),
+    // );
+
+    // return ListView.builder(
+    //   itemCount: post!.length,
+    //   itemBuilder: (c, i) => Container(
+    //     child: Text(post[i].title),
+    //   ),
+    // );
+    return Container(
       child: Column(
         children: [
-          Text('Today march 27 , 2022'),
-          Text('Barcelona'),
-          Text('Spain'),
-          SizedBox(
-            height: 30,
-          ),
-          CircleAvatar(
-            maxRadius: 120,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.format_color_reset_sharp),
-                Text('10C'),
-              ],
-            ),
-          ),
-          ListView.builder(
-            itemBuilder: (c, i) => Container(
-              child: Text(usr![i].title),
-            ),
-            itemCount: usr.length,
-          )
+          Text(post[0].id.toString()),
+          Text(post[0].title),
+          Text(post[0].body),
         ],
       ),
     );
-
-    // return ListView.builder(
-    //   itemCount: usr.length,
-    //   itemBuilder: (c, i) => Container(
-    //     child: Text(usr[i].title),
-    //   ),
-    // );
   }
 }

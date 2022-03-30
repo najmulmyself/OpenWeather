@@ -13,7 +13,8 @@ class Remote {
     );
     if (response.statusCode == 200) {
       var json = response.body;
-      return Posts.fromJson(json);
+      // return Posts.fromJson(json);
+      return postsFromJson(json);
     } else {
       print('fuck you');
     }
