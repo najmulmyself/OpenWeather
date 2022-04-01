@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:openweather/screen/home_screen.dart';
+// import 'package:openweather/screen/User.dart';
+import 'package:openweather/screen/home.dart';
+// import 'package:openweather/screen/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-        body: HomeScreen(),
+        body: Home(),
       ),
     );
   }
