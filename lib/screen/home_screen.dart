@@ -8,14 +8,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   dynamic post;
   @override
   void initState() {
     super.initState();
- 
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Get Location'),
+          )
         ],
       ),
     );
