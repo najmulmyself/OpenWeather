@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,6 +13,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+  }
+
+  void getLocation() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.low);
+    print(position);
   }
 
   @override
@@ -36,8 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
-            child: const Text('Get Location'),
+            onPressed: () {
+              getLocation();
+            },
+            child: const Text('Get current Location')
           )
         ],
       ),
