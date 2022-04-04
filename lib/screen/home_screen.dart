@@ -9,16 +9,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  dynamic post;
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  void getLocation() async {
+  getLocation() async {
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.low);
-    print(position);
+    print('something : ${position}');
   }
 
   @override
@@ -43,11 +37,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           ElevatedButton(
-            onPressed: () {
-              getLocation();
-            },
-            child: const Text('Get current Location')
-          )
+              onPressed: () async {
+                await getLocation();
+              },
+              child: const Text('Get current Location'))
         ],
       ),
     );
