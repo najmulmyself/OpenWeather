@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   getLocation() async {
     Position position = await Geolocator.getCurrentPosition(
+      forceAndroidLocationManager: true,
         desiredAccuracy: LocationAccuracy.low);
     print('something : ${position}');
   }
