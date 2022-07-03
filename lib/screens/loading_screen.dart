@@ -14,11 +14,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void getLocation() async {
-    LocationPermission permission;
-    permission = await Geolocator.requestPermission();
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-    print(position);
+    
   }
 
   @override
@@ -28,6 +24,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         child: ElevatedButton(
           onPressed: () {
             // no  need to call the function;
+            // getLocation();
           },
           child: Text('Get Location'),
         ),
