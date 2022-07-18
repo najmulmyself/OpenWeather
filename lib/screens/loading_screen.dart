@@ -21,6 +21,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
     print(location.longitude);
   }
 
+  void getData() {
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
