@@ -23,7 +23,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     getLocationData();
   }
 
-  void getLocationData() async {
+  Future<void> getLocationData() async {
     Location location = Location();
     await location.getCurrentLocation();
     latitude = location.latitude;
@@ -46,7 +46,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SpinKitSpinningLines(color: Colors.red, size: 100.0),
+        child: SpinKitPouringHourGlass(color: Colors.red, size: 100.0),
       ),
     );
   }
