@@ -6,8 +6,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:openweather/screens/location_screen.dart';
 import 'package:openweather/services/location.dart';
 import 'package:openweather/services/networking.dart';
+import 'package:openweather/services/weather.dart';
 
-const apiKey = 'c1478dff46b3220baeb2e7127cb080f4';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -23,13 +23,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   Future<void> getLocationData() async {
-    Location location = Location();
-    await location.getCurrentLocation();
-
-
-    Networkhelper networkhelper = Networkhelper(
-        'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
-    var weatherData = await networkhelper.getData();
+WeatherModel weatherModel = WeatherModel();
+var weatherData = weatherModel.getLocationWeather();
     // print(latitude);
     // print(longitude);
     Navigator.push(
@@ -39,6 +34,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
       ),
     );
   }
+
+
 
   @override
   Widget build(BuildContext context) {
