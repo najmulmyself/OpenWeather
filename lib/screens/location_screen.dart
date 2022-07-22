@@ -23,20 +23,18 @@ class _LocationScreenState extends State<LocationScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
-
     updateUI(widget.locationWeather);
   }
-
-  void updateUI(dynamic weatherData) async {
-    setState(() {
+  void updateUI(dynamic weatherData)  async {
+    setState(() { 
       if (weatherData == null) {
         Center(
           child: Text('Unable to get weather data'),
         );
+
         return;
       }
-      var temp = weatherData['main']['temp'];
+      var  temp =  weatherData['main']['temp'];
       temperature = temp.toInt();
       condition = weatherData['weather'][0]['id'];
       cityName = weatherData['name'];

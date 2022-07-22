@@ -23,12 +23,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Future<void> getLocationData() async {
     WeatherModel weatherModel = WeatherModel();
     var weatherData = weatherModel.getLocationWeather();
-    // print(latitude);
+    print(weatherData);
     // print(longitude);
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => LocationScreen(locationWeather: weatherData),
+        builder: (_) => LocationScreen(locationWeather: weatherData!),
       ),
     );
   }

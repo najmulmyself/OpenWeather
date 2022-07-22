@@ -7,7 +7,7 @@ const apiKey = 'c1478dff46b3220baeb2e7127cb080f4';
 class WeatherModel {
     Future<dynamic> getLocationWeather()async{
         Location location = Location();
-    await location.getCurrentLocation();
+     location.getCurrentLocation();
 
 
     Networkhelper networkhelper = Networkhelper(
