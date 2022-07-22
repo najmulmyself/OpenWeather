@@ -28,7 +28,7 @@ class _LocationScreenState extends State<LocationScreen> {
     updateUI(widget.locationWeather);
   }
 
-  void updateUI(weatherData) {
+  void updateUI(dynamic weatherData) async {
     setState(() {
       if (weatherData == null) {
         Center(

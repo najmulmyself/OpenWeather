@@ -8,14 +8,12 @@ import 'package:openweather/services/location.dart';
 import 'package:openweather/services/networking.dart';
 import 'package:openweather/services/weather.dart';
 
-
 class LoadingScreen extends StatefulWidget {
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -23,8 +21,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   Future<void> getLocationData() async {
-WeatherModel weatherModel = WeatherModel();
-var weatherData = weatherModel.getLocationWeather();
+    WeatherModel weatherModel = WeatherModel();
+    var weatherData = weatherModel.getLocationWeather();
     // print(latitude);
     // print(longitude);
     Navigator.push(
@@ -34,8 +32,6 @@ var weatherData = weatherModel.getLocationWeather();
       ),
     );
   }
-
-
 
   @override
   Widget build(BuildContext context) {
